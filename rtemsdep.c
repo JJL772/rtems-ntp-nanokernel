@@ -471,7 +471,7 @@ get_poll_interval()
 struct timex   ntv;
 rtems_interval rate;
 
-	rtems_clock_get( RTEMS_CLOCK_GET_TICKS_PER_SECOND , &rate );
+	rate = rtems_clock_get_ticks_per_second();
 	ntv.modes = 0;
 	if ( ntp_adjtime(&ntv) ) {
 		printk("NTP: warning; unable to determine poll interval; using 600s\n");
@@ -793,7 +793,7 @@ struct sockaddr me;
 #else
 	{
 	rtems_interval rate;
-	rtems_clock_get( RTEMS_CLOCK_GET_TICKS_PER_SECOND , &rate );
+	rate = rtems_clock_get_ticks_per_second();
 	hz = rate / RATE_DIVISOR;
 	}
 #endif

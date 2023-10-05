@@ -169,6 +169,8 @@ pcc_t old = last_tick;
 
 static uint32_t tick_base;
 
+#include <rtems/clockdrv.h>
+
 static inline pcc_t getPcc()
 {
 unsigned        flags;
