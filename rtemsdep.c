@@ -40,6 +40,8 @@
 #include "pictimer.h"
 #endif
 
+#include "ntp.h"
+
 #endif
 
 
